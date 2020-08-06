@@ -8,7 +8,7 @@ class ConnectionsController {
       const totalConnections = await db('connections').count('* as total')
       const total = totalConnections[0]
   
-      return res.status(200).json({ total })
+      return res.status(200).json(total)
     } catch (error) {
       return res.status(500).json({
         error: 'Unexpected error while getting connections total'
